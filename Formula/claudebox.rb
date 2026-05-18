@@ -1,17 +1,16 @@
 class Claudebox < Formula
   desc "Claude Code container runtime — scoped per project, runs in Docker or Apple Container"
   homepage "https://github.com/bpeterme/claudebox"
-  url "https://github.com/bpeterme/claudebox/archive/refs/tags/2026.05.18.2.tar.gz"
-  sha256 "58275fe6fb4d5bf4687b1434fb41773541f039dd9174673fdfd2a0fb1c65e753"
+  url "https://github.com/bpeterme/claudebox/archive/refs/tags/PLACEHOLDER.tar.gz"
+  sha256 "PLACEHOLDER"
   license "MIT"
 
   head "https://github.com/bpeterme/claudebox.git", branch: "dev"
 
   depends_on :macos
-  depends_on "jq"
 
   def install
-    version_str = build.head? ? `git describe --tags --always`.chomp : version.to_s
+    version_str = build.head? ? "HEAD-#{`git describe --tags --always`.chomp}" : version.to_s
     inreplace "cbox.sh", '_CBOX_VERSION="dev"', "_CBOX_VERSION=\"#{version_str}\""
     bin.install "cbox.sh" => "cbox"
     (share/"claudebox").install "dockerfile"
