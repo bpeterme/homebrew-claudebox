@@ -1,8 +1,6 @@
 class Claudebox < Formula
   desc "Claude Code container runtime — scoped per project, runs in Docker or Apple Container"
   homepage "https://github.com/bpeterme/claudebox"
-  url "https://github.com/bpeterme/claudebox/archive/refs/tags/2026.06.12.2.tar.gz"
-  sha256 "6bbd3265f8ab2bc1979ffa49d67d48562b18ee91c748f128b099baf2c827b58b"
   license "MIT"
 
   head "https://github.com/bpeterme/claudebox.git", branch: "dev"
@@ -15,6 +13,7 @@ class Claudebox < Formula
     bin.install "cbox.sh" => "cbox"
     (share/"claudebox").install "dockerfile"
     (share/"claudebox").install "cbox.env.example"
+    zsh_completion.install "completions/_cbox"
   end
 
   def caveats
@@ -31,6 +30,6 @@ class Claudebox < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cbox version")
+    assert_match "cbox HEAD-", shell_output("#{bin}/cbox version")
   end
 end
