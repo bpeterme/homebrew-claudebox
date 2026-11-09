@@ -1,8 +1,8 @@
 class Claudebox < Formula
   desc "Claude Code container runtime — scoped per project, runs in Docker or Apple Container"
   homepage "https://github.com/bpeterme/claudebox"
-  url "https://github.com/bpeterme/claudebox/archive/refs/tags/2026.11.09.1.tar.gz"
-  sha256 "cf0522373fc96176dd916471ba09fcb2f6aeb2fe1079d6fcf046870a801b5c26"
+  url "https://github.com/bpeterme/claudebox/archive/refs/tags/2026.11.09.2.tar.gz"
+  sha256 "e81cf7fbbe2e1c86c81c8e9e11ae35ca7d6b5a711e4a11d35567c24666edeb86"
   license "MIT"
 
   head "https://github.com/bpeterme/claudebox.git", branch: "dev"
